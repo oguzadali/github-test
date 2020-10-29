@@ -20,6 +20,9 @@ router.get('/', function (req, res) {
 router.get('/test', function (req, res) {
     res.sendFile(path.resolve(__dirname, "../src/second.html"))
 })
+router.get('/blog', function (req, res) {
+    res.sendFile(path.resolve(__dirname, "../src/blog.html"))
+})
 
 router.get('/about', function (req, res) {
     res.send('About birds')
