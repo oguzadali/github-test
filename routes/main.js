@@ -17,6 +17,9 @@ router.use(function timeLog(req, res, next) {
 router.get('/', function (req, res) {
     res.sendFile(path.resolve(__dirname, "../src/index.html"))
 })
+router.get('/test', function (req, res) {
+    res.sendFile(path.resolve(__dirname, "../src/second.html"))
+})
 
 router.get('/about', function (req, res) {
     res.send('About birds')
