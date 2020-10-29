@@ -1,11 +1,16 @@
 const express = require('express')
 const app = express()
+const path = require('path');
+var favicon = require('serve-favicon');
+
+
 const port = 3000
 
 app.use(express.static('public'))
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.get('/', function (req, res) {
-    res.sendFile('E:/masaüstü/git-test/index.html');
+    res.sendFile(path.join(__dirname + "/index.html"));
 });
 
 app.listen(port, () => {
