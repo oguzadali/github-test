@@ -9,9 +9,12 @@ const port = 3000
 app.use(express.static('public'))
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + "/index.html"));
-});
+
+const main = require("./routes/main")
+
+
+app.use()
+app.use("/", main)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
