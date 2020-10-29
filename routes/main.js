@@ -2,6 +2,7 @@ const { resolveSoa } = require('dns');
 var express = require('express')
 var router = express.Router()
 const path = require('path');
+const moment = require('moment');
 
 
 
@@ -12,10 +13,10 @@ router.use(function timeLog(req, res, next) {
     next()
 })
 
-
+const date = moment().format('MMMM Do YYYY, h:mm:ss a')
 // define the home page route
 router.get('/', function (req, res) {
-    res.sendFile(path.resolve(__dirname, "../src/index.html"))
+    res.sendFile(path.resolve(__dirname, "../src/index.html"), { date: date })
 })
 router.get('/test', function (req, res) {
     res.sendFile(path.resolve(__dirname, "../src/second.html"))
